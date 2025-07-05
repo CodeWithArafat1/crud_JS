@@ -39,9 +39,12 @@ button {
 
 table {
   border-collapse: collapse;
+  border: 2px solid crimson;
+
 
   & th,
   td {
+    border: 2px solid crimson;
     padding: 5px;
   }
 }
