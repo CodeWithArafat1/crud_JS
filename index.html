@@ -4,9 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    <div class="">
+      <button onclick="add()" id="add">Add Users</button>
+    </div>
 
-    
+    <div id="createForm">
+      <input type="text" id="newId" hidden />
+      <input type="text" id="name" placeholder="Enter your Name" />
+      <input type="text" id="email" placeholder="Enter your Email" />
+      <button onclick="addUsers()">Add</button>
+    </div>
+
+    <div id="updateForm">
+      <input type="text" id="uname" />
+      <input type="text" id="uemail" />
+      <button onclick="updateUser()">Update</button>
+    </div>
+
+    <table border="1px">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="tr">
+          <td>01</td>
+          <td>Arafat Nill</td>
+          <td>arafat@gmail.com</td>
+          <td>
+            <button id="btn-delete">Delete</button>
+            <button id="btn-edit">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="./script.js"></script>
   </body>
 </html>
