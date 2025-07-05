@@ -7,7 +7,7 @@ const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 
 function add() {
-  createForm.style.display = "block";
+  createForm.style.display = "flex";
   addBtn.style.display = "none";
 }
 
@@ -30,7 +30,10 @@ window.onload = () => {
     tr.appendChild(tdEmail);
 
     const actionBtn = document.createElement("td");
-    actionBtn.innerHTML = `<button id="btn-delete" onclick="delUsers(${users.id})">Delete</button> <button id="btn-edit" onclick="edit(${users.id})">Edit</button>`;
+    actionBtn.innerHTML = `<div class="action-buttons">
+    <button class="edit-btn" onclick="edit(${users.id})">Edit</button>
+    <button class="delete-btn" onclick="delUsers(${users.id})">Delete</button> 
+    </div>`;
     tr.appendChild(actionBtn);
 
     tBody.appendChild(tr);
@@ -39,7 +42,7 @@ window.onload = () => {
 
 function addUsers() {
   createForm.style.display = "none";
-  addBtn.style.display = "block";
+  addBtn.style.display = "flex";
 
   const name = nameInput.value.trim();
   const email = emailInput.value.trim();
@@ -59,7 +62,10 @@ function addUsers() {
   tdName.innerText = name;
   tdEmail.innerText = email;
 
-  actionBtn.innerHTML = `<button id="btn-delete" onclick="delUsers(${newId})">Delete</button> <button id="btn-edit" onclick="edit(${newId})">Edit</button>`;
+  actionBtn.innerHTML = `<div class="action-buttons">
+    <button class="edit-btn" onclick="edit(${newId})">Edit</button>
+    <button class="delete-btn" onclick="delUsers(${newId})">Delete</button> 
+    </div>`;
 
   tr.appendChild(tdId);
   tr.appendChild(tdName);
@@ -89,8 +95,9 @@ function setData(oldData) {
 }
 
 function edit(id) {
-  updateForm.style.display = "block";
+  updateForm.style.display = "flex";
   addBtn.style.display = "none";
+  createForm.style.display = "none";
 
   const users = getData();
 
@@ -110,7 +117,7 @@ function delUsers(id) {
 
 function updateUser() {
   updateForm.style.display = "none";
-  addBtn.style.display = "block";
+  addBtn.style.display = "flex";
   const users = getData();
   const uid = parseInt(document.getElementById("newId").value);
   const unameValue = document.getElementById("uname").value.trim();
