@@ -26,7 +26,7 @@ function addUsers() {
 
   if (name === "" || email === "") return;
 
-  const id = Date.now();
+  const id = getData().id;
   newId.value = id;
 
   const tr = document.createElement("tr");
@@ -59,10 +59,14 @@ function addUsers() {
 
   nameInput.value = "";
   emailInput.value = "";
+  renderTable();
 }
 
 function getData() {
-  return JSON.parse(localStorage.getItem("userData")) || [];
+  const users = JSON.parse(localStorage.getItem("userData")) || [];
+  return users.map((user, index) => {
+    return { ...user, id: index + 1 };
+  });
 }
 
 function setData(data) {
