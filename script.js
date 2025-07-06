@@ -26,14 +26,9 @@ function addUsers() {
 
   if (name === "" || email === "") return;
 
-  const id = getData().id;
-  newId.value = id;
+  const id = newId.value;
 
   const tr = document.createElement("tr");
-
-  const tdId = document.createElement("td");
-  tdId.innerText = id;
-  tr.appendChild(tdId);
 
   const tdName = document.createElement("td");
   tdName.innerText = name;
@@ -149,4 +144,5 @@ function delUser(id) {
 
   setData(filteredUsers);
   renderTable();
+  console.log(id);
 }
