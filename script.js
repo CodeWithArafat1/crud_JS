@@ -148,6 +148,5 @@ function delUser(id) {
   const filteredUsers = getUsers.filter((data) => data.id !== id);
 
   setData(filteredUsers);
-
   renderTable();
 }
