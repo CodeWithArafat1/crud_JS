@@ -23,6 +23,9 @@ function addUsers() {
 
   const name = nameInput.value.trim();
   const email = emailInput.value.trim();
+
+  if (name === "" || email === "") return;
+
   const id = Date.now();
   newId.value = id;
 
